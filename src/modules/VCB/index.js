@@ -1,6 +1,6 @@
 const { v4: uuid } = require('uuid');
 const axios = require('./axiosConfig');
-const TwoCaptcha = require('../OCR/2captcha');
+const Captcha69 = require('../OCR/Captcha69');
 
 const listBank = require('./listBankCode');
 
@@ -38,7 +38,7 @@ class VCB {
     async solveCaptcha() {
         this.genNewCaptchaId();
         const captchaImg = await this.getCaptcha('arraybuffer');
-        return await TwoCaptcha.solveCaptcha(captchaImg);
+        return await Captcha69.solveCaptcha(captchaImg);
     }
 
     async login({ user, pass }) {
