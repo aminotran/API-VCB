@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  server-vcb:
+    container_name: server-vcb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.docker
+    ports:
+      - "8088:8088"
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - mongodb-vcb
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  mongodb-vcb:
+    container_name: mongodb-vcb
+    image: mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb
+      MONGO_INITDB_ROOT_PASSWORD: mongodb
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:

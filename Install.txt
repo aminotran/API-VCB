@@ -1,0 +1,3 @@
+B1: Cài docker: curl -fsSL https://get.docker.com | bash
+B2: Thay đổi key ở file .env.docker
+B3: Giả nén code và gõ: docker compose up -d

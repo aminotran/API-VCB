@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "axios": "^0.22.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "form-data": "^4.0.0",
+    "mongoose": "^6.0.8",
+    "node-cron": "^3.0.0",
+    "node-forge": "^0.10.0",
+    "uuid": "^8.3.2"
+  },
+  "name": "server-vcb",
+  "description": "Server VCB",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon --inspect src/app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
